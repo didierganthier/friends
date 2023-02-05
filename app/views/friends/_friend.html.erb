@@ -1,5 +1,4 @@
-<div id="<%= dom_id friend %>">
-
+<div id="<%= dom_id friend %>" class="shadow p-4 my-4 rounded hover:shadow-blue-300">
   <p class="my-5">
     <% if friend.photo? %>
       <%= image_tag friend.photo, class: "rounded-full w-32 h-32" %>
@@ -36,6 +35,5 @@
   <% if action_name != "show" %>
     <%= link_to "Show this friend", friend, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this friend', edit_friend_path(friend), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
   <% end %>
 </div>
