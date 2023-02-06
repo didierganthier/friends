@@ -1,0 +1,19 @@
+<div  id="<%= dom_id friend %>" class="w-full max-w-xl bg-white border border-gray-200 rounded-lg shadow my-5">
+    <div class="flex flex-col items-center py-10">
+        <% if friend.photo? %>
+          <%= image_tag friend.photo, class: "w-48 h-48 mb-3 rounded-full shadow-lg" %>
+        <% else %>
+          <%= image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(friend.email)}?s=200&d=identicon", class: "w-48 h-48 mb-3 rounded-full shadow-lg" %>
+        <% end %>
+        <h5 class="mb-1 text-xl font-medium text-gray-900"><%= friend.first_name %> <%= friend.last_name %></h5>
+        <span class="text-sm text-gray-500"><%= friend.email %></span>
+        <span class="text-sm text-gray-500"><%= friend.phone %></span>
+        <span class="text-sm text-gray-500"><%= friend.twitter %></span>
+        <div class="flex mt-4 space-x-3 md:mt-6">
+          <% if action_name != "show" %>
+            <%= link_to "Show this friend", friend, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+            <%= link_to 'Edit this friend', edit_friend_path(friend), class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200" %>
+          <% end %>
+        </div>
+    </div>
+</div>
