@@ -8,7 +8,7 @@
     <%= link_to 'New friend', new_friend_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="friends" class="min-w-full">
+  <div id="friends" class="grid grid-cols-3 gap-4">
     <%= render @friends %>
   </div>
 </div>
